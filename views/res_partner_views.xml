@@ -1,0 +1,22 @@
+<odoo>
+    <!--
+        FORM VIEW INHERITANCE: res.partner
+        This record inherits the main partner form (base.view_partner_form)
+        to replace the 'type' selection field with a 'radio' widget.
+        This ensures all address types, including 'Doctor Address' (added in Python),
+        are visible in the Address popup form.
+    -->
+    <record id="view_partner_form_doctor_type_radio" model="ir.ui.view">
+        <field name="name">res.partner.form.doctor.type.radio</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            
+            <!-- Replace the standard field 'type' definition -->
+            <xpath expr="//field[@name='type']" position="replace">
+                <field name="type" widget="radio"/>
+            </xpath>
+            
+        </field>
+    </record>
+</odoo>

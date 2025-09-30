@@ -1,0 +1,12 @@
+/*
+ * Odoo uses the .o_partner_type.{type_key} selector pattern for address icons.
+ * The 'doctor' key is defined in the res_partner.py model.
+ * We use the Font Awesome unicode for the Stethoscope icon: \f0f1
+ */
+.o_partner_type.doctor > span:before {
+    content: "\f0f1";
+}
+/* You may want to add custom color/size here if needed */
+.o_partner_type.doctor {
+    color: #4CAF50; /* Example: make the icon green */
+}
